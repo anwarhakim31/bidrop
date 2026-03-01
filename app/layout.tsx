@@ -5,6 +5,7 @@ import Header from "@/components/fragments/header";
 import Footer from "@/components/fragments/footer";
 import Navigation from "@/components/fragments/navigation";
 import { organizationSchema } from "@/lib/schema";
+import { Analytics } from "@vercel/analytics/next";
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -127,6 +128,7 @@ export default function RootLayout({
         <Navigation />
         <Footer />
         <div id="modal-root"></div>
+        <Analytics />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
