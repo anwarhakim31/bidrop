@@ -23,14 +23,13 @@ export default function HeroView() {
   }, []);
 
   return (
-    <section className="relative w-screen h-100 md:min-h-screen ">
+    <section className="relative w-screen h-100 md:h-screen bg-[url('/home-low.webp')] bg-cover bg-center">
       <Image
-        src="/home.png"
-        width={1920}
-        height={1080}
-        alt="BiDrop Production"
-        className="absolute aspect-video w-full h-full object-cover z-10 brightness-60"
+        src="/home.webp"
+        alt="Background BiDrop Production"
+        fill
         priority
+        className="object-cover brightness-60"
       />
 
       <div ref={container} className="absolute inset-0 z-20 p-4">
