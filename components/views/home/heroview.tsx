@@ -23,7 +23,7 @@ export default function HeroView() {
   }, []);
 
   return (
-    <section className="relative w-screen h-100 md:min-h-screen bg-orange-200">
+    <section className="relative w-screen h-100 md:min-h-screen ">
       <Image
         src="/home.png"
         width={1920}
@@ -31,7 +31,6 @@ export default function HeroView() {
         alt="BiDrop Production"
         className="absolute aspect-video w-full h-full object-cover z-10 brightness-60"
         priority
-        rel="preload"
       />
 
       <div ref={container} className="absolute inset-0 z-20 p-4">
