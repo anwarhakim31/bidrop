@@ -99,7 +99,7 @@ const Header = () => {
               width={70}
               height={20}
               priority
-              className="h-12 w-auto object-contain"
+              className="h-12 w-20 "
             />
             <span className="text-md text-[#0b3851] mt-1  font-bold">
               BiDrop Production
