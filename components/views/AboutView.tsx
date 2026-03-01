@@ -103,16 +103,16 @@ const AboutView = () => {
       >
         <div className="about-animate w-10 mb-4 h-1.5 mx-auto bg-linear-to-r from-orange-300 to-orange-500"></div>
 
-        <h5 className="about-animate lora text-2xl md:text-3xl font-semibold text-sec text-center">
+        <h3 className="about-animate lora text-2xl md:text-3xl font-semibold text-sec text-center">
           {params === "/tentang" ? "Tentang" : " Mengenal BiDrop Production"}
           {params !== "/tentang" && <br />}
-        </h5>
+        </h3>
 
         <div className="containers mt-12 grid grid-cols-1 lg:grid-cols-2 items-center justify-items-center gap-12 md:gap-12 lg:gap-4">
           <div className="">
-            <h3 className="about-animate-2 text-xl md:text-2xl font-semibold text-sec">
+            <h4 className="about-animate-2 text-xl md:text-2xl font-semibold text-sec">
               BiDrop Production
-            </h3>
+            </h4>
 
             <p className="about-animate-2 mt-4 text-justify text-sm md:text-base text-sec">
               Kami adalah perusahaan{" "}
@@ -176,6 +176,7 @@ const AboutView = () => {
             height={1000}
             alt="about"
             priority
+            rel="preload"
             className="about-animate-4 w-full"
           />
         </div>

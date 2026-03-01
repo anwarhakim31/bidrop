@@ -31,6 +31,7 @@ export default function HeroView() {
         alt="BiDrop Production"
         className="absolute aspect-video w-full h-full object-cover z-10 brightness-60"
         priority
+        rel="preload"
       />
 
       <div ref={container} className="absolute inset-0 z-20 p-4">

@@ -142,6 +142,7 @@ const Header = () => {
                         key={index}
                         href={`/${item.slug}`}
                         aria-label={item.title}
+                        prefetch
                         onClick={() => {
                           setIsOpen(false);
                           setFixed(false);
@@ -161,6 +162,7 @@ const Header = () => {
                 <Link
                   href={item.path}
                   key={item.name}
+                  prefetch
                   onClick={() => {
                     setIsOpen(false);
                     setFixed(false);

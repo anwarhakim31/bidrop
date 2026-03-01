@@ -61,13 +61,13 @@ const GaleriView = () => {
     if (index < 8) {
       setData({
         index: index + 1,
-        url: `/HomeGallery/Kontraktor Booth dan Jasa Design Booth (${index + 1}).png`,
+        url: `/HomeGallery/kontraktor Booth dan Jasa Design Booth (${index + 1}).png`,
         title: `Kontraktor Booth dan Jasa Design Booth (${index + 1})`,
       });
     } else {
       setData({
         index: 1,
-        url: `/HomeGallery/Kontraktor Booth dan Jasa Design Booth (1).png`,
+        url: `/HomeGallery/kontraktor Booth dan Jasa Design Booth (1).png`,
         title: `Kontraktor Booth dan Jasa Design Booth (1)`,
       });
     }
@@ -77,13 +77,13 @@ const GaleriView = () => {
     if (index > 1) {
       setData({
         index: index - 1,
-        url: `/HomeGallery/Kontraktor Booth dan Jasa Design Booth (${index - 1}).png`,
+        url: `/HomeGallery/kontraktor Booth dan Jasa Design Booth (${index - 1}).png`,
         title: `Kontraktor Booth dan Jasa Design Booth (${index - 1})`,
       });
     } else {
       setData({
         index: 8,
-        url: `/HomeGallery/Kontraktor Booth dan Jasa Design Booth (8).png`,
+        url: `/HomeGallery/kontraktor Booth dan Jasa Design Booth (8).png`,
         title: `Kontraktor Booth dan Jasa Design Booth (8)`,
       });
     }
@@ -101,7 +101,7 @@ const GaleriView = () => {
             <button
               aria-label={`booth event (${index + 1})`}
               onClick={() => handleOpen(index)}
-              className="galeri-card rounded-md border cursor-pointer shadow-sm border-gray-300 hover:border-orange-400 transition-[border] duration-300 ease-in-out p-2"
+              className="galeri-card rounded-md border w-full h-full cursor-pointer shadow-sm border-gray-300 hover:border-orange-400 transition-[border] duration-300 ease-in-out p-2"
             >
               <figure className="aspect-4/3 ">
                 <Image
@@ -121,6 +121,8 @@ const GaleriView = () => {
       </div>
       <Link
         href="/galeri"
+        aria-label="lihat semua galeri"
+        prefetch
         className="galeri-header flex justify-end text-sm font-medium hover:text-orange-500 transition-[color] duration-300 ease-in-out text-prim  items-center mt-8"
       >
         <span>Lihat Semua</span>

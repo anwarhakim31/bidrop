@@ -53,7 +53,8 @@ const WwwView = () => {
             href={`/${item.slug}`}
             key={index}
             aria-label={item.title}
-            className=" www-card rounded-md border shadow-sm border-gray-300 hover:border-orange-400 transition-[border] duration-300 ease-in-out p-2"
+            prefetch
+            className=" www-card rounded-md w-full h-full border shadow-sm border-gray-300 hover:border-orange-400 transition-[border] duration-300 ease-in-out p-2"
           >
             <figure className="aspect-4/3">
               <Image

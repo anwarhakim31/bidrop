@@ -114,7 +114,7 @@ const BoothExhibitionView = () => {
               <button
                 aria-label={`booth event (${index + 1})`}
                 onClick={() => handleOpen(index)}
-                className="card rounded-md border cursor-pointer shadow-sm border-gray-300 hover:border-orange-400 transition-[border] duration-300 ease-in-out p-2"
+                className="card rounded-md border w-full h-full cursor-pointer shadow-sm border-gray-300 hover:border-orange-400 transition-[border] duration-300 ease-in-out p-2"
               >
                 <figure className="aspect-4/3 ">
                   <Image
@@ -122,7 +122,7 @@ const BoothExhibitionView = () => {
                     width={1200}
                     height={500}
                     alt={`Booth Event Exhibition (${index + 1})`}
-                    className=" w-full h-full  "
+                    className=" w-full h-full "
                     priority
                     placeholder="blur"
                     blurDataURL="/blur.jpg"

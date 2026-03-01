@@ -115,7 +115,7 @@ const StageView = () => {
               <button
                 aria-label={`booth event (${index + 1})`}
                 onClick={() => handleOpen(index)}
-                className="card rounded-md border cursor-pointer shadow-sm border-gray-300 hover:border-orange-400 transition-[border] duration-300 ease-in-out p-2"
+                className="card rounded-md border w-full h-full cursor-pointer shadow-sm border-gray-300 hover:border-orange-400 transition-[border] duration-300 ease-in-out p-2"
               >
                 <figure className="aspect-4/3 ">
                   <Image
