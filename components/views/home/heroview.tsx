@@ -23,7 +23,7 @@ export default function HeroView() {
   }, []);
 
   return (
-    <section className="relative w-screen h-100 md:h-screen bg-[url('/home-low.webp')] bg-cover bg-center">
+    <section className="relative w-screen h-100 md:h-screen bg-[url('/home-low.webp')] bg-cover bg-center ">
       <Image
         src="/home.webp"
         alt="Background BiDrop Production"
