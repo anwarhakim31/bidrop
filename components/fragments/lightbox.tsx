@@ -81,8 +81,8 @@ const LightBox = ({
               priority
               rel="preload"
               src={data.url}
-              width={500}
-              height={500}
+              width={600}
+              height={600}
               alt={data.title}
               placeholder="blur"
               blurDataURL="/blur.jpg"

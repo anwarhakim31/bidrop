@@ -54,7 +54,7 @@ const StageView = () => {
     if (!isOpen) setIsOpen(true);
     setData({
       index: index + 1,
-      url: `/Stage & Backdrop/Stage dan Backdrop Event (${index + 1}).png`,
+      url: `/Stage dan Backdrop/Stage dan Backdrop Event (${index + 1}).png`,
       title: `Stage dan Backdrop Event (${index + 1})`,
     });
   };
@@ -63,13 +63,13 @@ const StageView = () => {
     if (index < 8) {
       setData({
         index: index + 1,
-        url: `/Stage & Backdrop/Stage dan Backdrop Event (${index + 1}).png`,
+        url: `/Stage dan Backdrop/Stage dan Backdrop Event (${index + 1}).png`,
         title: `Stage dan Backdrop Event (${index + 1})`,
       });
     } else {
       setData({
         index: 1,
-        url: `/Stage & Backdrop/Stage dan Backdrop Event (1).png`,
+        url: `/Stage dan Backdrop/Stage dan Backdrop Event (1).png`,
         title: `Stage dan Backdrop Event (1)`,
       });
     }
@@ -79,13 +79,13 @@ const StageView = () => {
     if (index > 1) {
       setData({
         index: index - 1,
-        url: `/Stage & Backdrop/Stage dan Backdrop Event (${index - 1}).png`,
+        url: `/Stage dan Backdrop/Stage dan Backdrop Event (${index - 1}).png`,
         title: `Stage dan Backdrop Event (${index - 1})`,
       });
     } else {
       setData({
         index: 8,
-        url: `/Stage & Backdrop/Stage dan Backdrop Event (8).png`,
+        url: `/Stage dan Backdrop/Stage dan Backdrop Event (8).png`,
         title: `Stage dan Backdrop Event (8)`,
       });
     }
@@ -119,7 +119,7 @@ const StageView = () => {
               >
                 <figure className="aspect-4/3 ">
                   <Image
-                    src={`/Stage & Backdrop/Stage dan Backdrop Event (${index + 1}).png`}
+                    src={`/Stage dan Backdrop/Stage dan Backdrop Event (${index + 1}).png`}
                     width={1200}
                     height={500}
                     alt={`Stage dan Backdrop Event (${index + 1})`}
