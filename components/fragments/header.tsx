@@ -87,9 +87,7 @@ const Header = () => {
           </div>
         </div>
       </div>
-      <div
-        className={`${isActive || isOpen ? `${pathname === "/" ? "mb-14" : "mb-34"}` : "mb-0"}`}
-      ></div>
+
       <header
         className={`bg-white py-1 left-0 w-full z-50 ${fixed ? " fixed top-0 " : ""}    ${isActive && !fixed ? "shadow-md fixed top-0 " : ""} ${isActive ? "transition-all duration-300 ease-in-out animate-[drop_0.3s_ease-in-out]" : ""}  ${isNonActive ? "shadow-md fixed top-[-200%] transition-all duration-300 ease-in-out animate-[up_0.3s_ease-in-out]" : ""} `}
       >
@@ -144,7 +142,10 @@ const Header = () => {
                         key={index}
                         href={`/${item.slug}`}
                         aria-label={item.title}
-                        onClick={() => setIsOpen(false)}
+                        onClick={() => {
+                          setIsOpen(false);
+                          setFixed(false);
+                        }}
                         className={`
                       hover:text-orange-400  
                       ${index === 0 ? "mt-8 md:mt-0 " : "mt-0"}
@@ -160,7 +161,10 @@ const Header = () => {
                 <Link
                   href={item.path}
                   key={item.name}
-                  onClick={() => setIsOpen(false)}
+                  onClick={() => {
+                    setIsOpen(false);
+                    setFixed(false);
+                  }}
                   className={`text-xs md:text-sm pl-6 md:pl-0 mt-4 md:ml-0 md:mt-0  w-full mr-auto font-semibold block relative ${
                     pathname === item.path
                       ? "text-prim"
@@ -193,6 +197,9 @@ const Header = () => {
           </button>
         </div>
       </header>
+      <div
+        className={`${isActive || isOpen ? `${pathname === "/" ? "mb-14" : "mb-34"}` : ""}`}
+      ></div>
     </Fragment>
   );
 };

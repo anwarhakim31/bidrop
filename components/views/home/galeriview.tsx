@@ -105,7 +105,7 @@ const GaleriView = () => {
             >
               <figure className="aspect-4/3 ">
                 <Image
-                  src={`/HomeGallery/Kontraktor Booth dan Jasa Design Booth (${index + 1}).png`}
+                  src={`/HomeGallery/kontraktor Booth dan Jasa Design Booth (${index + 1}).png`}
                   width={1200}
                   height={500}
                   alt={`Kontraktor Booth dan Jasa Design Booth (${index + 1})`}
