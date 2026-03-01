@@ -72,18 +72,21 @@ const LightBox = ({
             </div>
           </div>
           <figure
-            className="aspect-video"
+            className="aspect-video w-full h-full"
             onClick={(e) => {
               e.stopPropagation();
             }}
           >
             <Image
               priority
+              rel="preload"
               src={data.url}
               width={500}
               height={500}
               alt={data.title}
-              className="object-cover w-full h-auto object-center"
+              placeholder="blur"
+              blurDataURL="/blur.jpg"
+              className="object-cover w-full h-full"
             />
             <figcaption className="mt-2.5 text-sm font-semibold text-white">
               {data.title}

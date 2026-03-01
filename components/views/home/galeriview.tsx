@@ -52,7 +52,7 @@ const GaleriView = () => {
     if (!isOpen) setIsOpen(true);
     setData({
       index: index + 1,
-      url: `/HomeGallery/Kontraktor Booth dan Jasa Design Booth (${index + 1}).png`,
+      url: `/HomeGallery/kontraktor Booth dan Jasa Design Booth (${index + 1}).png`,
       title: `Kontraktor Booth dan Jasa Design Booth (${index + 1})`,
     });
   };
