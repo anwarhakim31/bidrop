@@ -23,7 +23,7 @@ export default function HeroView() {
   }, []);
 
   return (
-    <section className="relative w-screen h-100 md:min-h-screen">
+    <section className="relative w-screen h-100 md:min-h-screen bg-orange-200">
       <Image
         src="/home.png"
         width={1920}
