@@ -77,25 +77,29 @@ const LightBox = ({
               </button>
             </div>
           </div>
-          <div className="w-full flex justify-center">
-            <figure
-              className="relative w-full aspect-video overflow-hidden"
+          <div className="relative grid grid-cols-12">
+            <div
+              className=" col-span-12 flex items-center justify-center overflow-hidden"
               onClick={(e) => e.stopPropagation()}
             >
-              <Image
-                src={data.url}
-                alt={data.title}
-                fill
-                sizes="(max-width:768px) 100vw, 1200px"
-                placeholder="blur"
-                blurDataURL={blurData}
-                className="object-cover"
-                priority
-              />
-            </figure>
+              <figure className="aspect-video">
+                <Image
+                  src={data.url}
+                  alt={data.title}
+                  width={600}
+                  height={500}
+                  placeholder="blur"
+                  blurDataURL={blurData}
+                  className="w-full h-full object-cover"
+                  priority
+                />
+              </figure>
+            </div>
           </div>
+          <p className="mt-2.5 text-sm font-semibold text-white">
+            {data.title}
+          </p>
         </div>
-        <p className="mt-2.5 text-sm font-semibold text-white">{data.title}</p>
       </div>
     </Modal>
   );
