@@ -1,4 +1,6 @@
+import ImageGalery from "@/components/fragments/imagegallery";
 import JasaDesignView from "@/components/views/product/JasaDesignView";
+import getBase64 from "@/lib/getlocalbase64";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -57,5 +59,24 @@ export const metadata: Metadata = {
 };
 
 export default function Page() {
-  return <JasaDesignView />;
+  return (
+    <JasaDesignView>
+      {Array.from({ length: 8 }).map(async (_, index) => {
+        const blurData = await getBase64(
+          `https://ik.imagekit.io/z2imqerkk1/bidrop/Galeri/galeri-event (${index + 1}).png`,
+        );
+
+        return (
+          <div key={index} className=" col-span-2  md:col-span-6 lg:col-span-3">
+            <ImageGalery
+              blurData={blurData}
+              index={index}
+              imageURL="https://ik.imagekit.io/z2imqerkk1/bidrop/Galeri/galeri-event"
+              totalIndex={8}
+            />
+          </div>
+        );
+      })}
+    </JasaDesignView>
+  );
 }

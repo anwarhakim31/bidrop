@@ -1,20 +1,14 @@
 "use client";
-import LightBox from "@/components/fragments/lightbox";
+
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 import { ChevronRight } from "lucide-react";
-import Image from "next/image";
-import Link from "next/link";
-import { useEffect, useRef, useState } from "react";
 
-const GaleriView = () => {
+import Link from "next/link";
+import { useEffect, useRef } from "react";
+
+const GaleriView = ({ children }: { children: React.ReactNode }) => {
   const sectionRef = useRef<HTMLDivElement>(null);
-  const [isOpen, setIsOpen] = useState(false);
-  const [data, setData] = useState({
-    index: 0,
-    url: "",
-    title: "",
-  });
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
@@ -48,47 +42,6 @@ const GaleriView = () => {
     return () => ctx.revert();
   }, []);
 
-  const handleOpen = (index: number) => {
-    if (!isOpen) setIsOpen(true);
-    setData({
-      index: index + 1,
-      url: `https://ik.imagekit.io/z2imqerkk1/bidrop/home/kontraktor Booth dan Jasa Design Booth (${index + 1}).png`,
-      title: `Kontraktor Booth dan Jasa Design Booth (${index + 1})`,
-    });
-  };
-
-  const handleNext = (index: number) => {
-    if (index < 8) {
-      setData({
-        index: index + 1,
-        url: `https://ik.imagekit.io/z2imqerkk1/bidrop/home/kontraktor Booth dan Jasa Design Booth (${index + 1}).png`,
-        title: `Kontraktor Booth dan Jasa Design Booth (${index + 1})`,
-      });
-    } else {
-      setData({
-        index: 1,
-        url: `https://ik.imagekit.io/z2imqerkk1/bidrop/home/kontraktor Booth dan Jasa Design Booth (1).png`,
-        title: `Kontraktor Booth dan Jasa Design Booth (1)`,
-      });
-    }
-  };
-
-  const handlePrev = (index: number) => {
-    if (index > 1) {
-      setData({
-        index: index - 1,
-        url: `https://ik.imagekit.io/z2imqerkk1/bidrop/home/kontraktor Booth dan Jasa Design Booth (${index - 1}).png`,
-        title: `Kontraktor Booth dan Jasa Design Booth (${index - 1})`,
-      });
-    } else {
-      setData({
-        index: 8,
-        url: `https://ik.imagekit.io/z2imqerkk1/bidrop/home/kontraktor Booth dan Jasa Design Booth (8).png`,
-        title: `Kontraktor Booth dan Jasa Design Booth (8)`,
-      });
-    }
-  };
-
   return (
     <section ref={sectionRef} className="containers  ">
       <div className="galeri-header w-10 mb-4 h-1.5 mx-auto bg-linear-to-r  from-orange-300 to-orange-500"></div>
@@ -96,26 +49,7 @@ const GaleriView = () => {
         Galeri
       </h3>
       <div className="mt-12 grid grid-cols-4 md:grid-cols-12  gap-2 ">
-        {Array.from({ length: 8 }).map((_, index) => (
-          <div key={index} className=" col-span-2  md:col-span-6 lg:col-span-3">
-            <button
-              aria-label={`booth event (${index + 1})`}
-              onClick={() => handleOpen(index)}
-              className="galeri-card rounded-md border w-full h-full cursor-pointer shadow-sm border-gray-300 hover:border-orange-400 transition-[border] duration-300 ease-in-out p-2"
-            >
-              <figure className="aspect-4/3 ">
-                <Image
-                  src={`https://ik.imagekit.io/z2imqerkk1/bidrop/home/kontraktor Booth dan Jasa Design Booth (${index + 1}).png`}
-                  width={1200}
-                  height={500}
-                  alt={`Kontraktor Booth dan Jasa Design Booth (${index + 1})`}
-                  className=" w-full h-full "
-                  priority
-                />
-              </figure>
-            </button>
-          </div>
-        ))}
+        {children}
       </div>
       <Link
         href="/galeri"
@@ -126,18 +60,6 @@ const GaleriView = () => {
         <span>Lihat Semua</span>
         <ChevronRight size={20} />
       </Link>
-      {isOpen && (
-        <LightBox
-          isOpen
-          total={8}
-          data={data}
-          handleNext={handleNext}
-          handlePrev={handlePrev}
-          handleClose={() => {
-            setIsOpen(false);
-          }}
-        />
-      )}
     </section>
   );
 };

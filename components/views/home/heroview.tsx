@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 
-export default function HeroView() {
+export default function HeroView({ children }: { children: React.ReactNode }) {
   const container = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -23,14 +23,8 @@ export default function HeroView() {
   }, []);
 
   return (
-    <section className="relative w-screen h-100 md:h-screen  bg-[url('/home-low.webp')] bg-cover bg-center">
-      <Image
-        src="https://ik.imagekit.io/z2imqerkk1/bidrop/home.webp"
-        alt="Background BiDrop Production"
-        fill
-        priority
-        className="object-cover brightness-60"
-      />
+    <section className="relative w-screen h-100 md:h-screen  ">
+      {children}
 
       <div ref={container} className="absolute inset-0 z-20 p-4">
         <div className="w-full h-full flex flex-col items-center justify-center">

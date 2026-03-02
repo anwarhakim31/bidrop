@@ -1,12 +1,10 @@
 "use client";
-import { whatwework } from "@/utils/constants";
+
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
-import Image from "next/image";
-import Link from "next/link";
 import { useEffect, useRef } from "react";
 
-const WwwView = () => {
+const WwwView = ({ children }: { children: React.ReactNode }) => {
   const sectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
@@ -48,29 +46,7 @@ const WwwView = () => {
         Apa yang Kami Kerjakan
       </h3>
       <div className="mt-12 grid grid-cols-1  lg:grid-cols-3 gap-6 ">
-        {whatwework.map((item, index) => (
-          <Link
-            href={`/${item.slug}`}
-            key={index}
-            aria-label={item.title}
-            prefetch
-            className=" www-card rounded-md w-full h-full border shadow-sm border-gray-300 hover:border-orange-400 transition-[border] duration-300 ease-in-out p-2"
-          >
-            <figure className="aspect-4/3">
-              <Image
-                src={item.image}
-                width={1200}
-                height={200}
-                priority
-                alt="Kerajinan tangan tradisional buatan pengrajin lokal"
-                className=" w-full h-full "
-              />
-              <figcaption className="mt-2.5 text-sm font-semibold text-orange-400">
-                {item.title}
-              </figcaption>
-            </figure>
-          </Link>
-        ))}
+        {children}
       </div>
     </section>
   );

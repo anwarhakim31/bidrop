@@ -1,22 +1,13 @@
 "use client";
-import LightBox from "@/components/fragments/lightbox";
+
 import CTAview from "@/components/views/home/cta";
 import { product2Schema } from "@/lib/schema";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
+import { Fragment, useEffect, useRef } from "react";
 
-import Image from "next/image";
-
-import { Fragment, useEffect, useRef, useState } from "react";
-
-const StageView = () => {
+const StageView = ({ children }: { children: React.ReactNode }) => {
   const sectionRef = useRef<HTMLDivElement>(null);
-  const [isOpen, setIsOpen] = useState(false);
-  const [data, setData] = useState({
-    index: 0,
-    url: "",
-    title: "",
-  });
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
@@ -50,46 +41,6 @@ const StageView = () => {
     return () => ctx.revert();
   }, []);
 
-  const handleOpen = (index: number) => {
-    if (!isOpen) setIsOpen(true);
-    setData({
-      index: index + 1,
-      url: `https://ik.imagekit.io/z2imqerkk1/bidrop/stage-backdrop/Stage dan Backdrop Event (${index + 1}).png`,
-      title: `Stage dan Backdrop Event (${index + 1})`,
-    });
-  };
-
-  const handleNext = (index: number) => {
-    if (index < 8) {
-      setData({
-        index: index + 1,
-        url: `https://ik.imagekit.io/z2imqerkk1/bidrop/stage-backdrop/Stage dan Backdrop Event (${index + 1}).png`,
-        title: `Stage dan Backdrop Event (${index + 1})`,
-      });
-    } else {
-      setData({
-        index: 1,
-        url: `https://ik.imagekit.io/z2imqerkk1/bidrop/stage-backdrop/Stage dan Backdrop Event (1).png`,
-        title: `Stage dan Backdrop Event (1)`,
-      });
-    }
-  };
-
-  const handlePrev = (index: number) => {
-    if (index > 1) {
-      setData({
-        index: index - 1,
-        url: `https://ik.imagekit.io/z2imqerkk1/bidrop/stage-backdrop/Stage dan Backdrop Event (${index - 1}).png`,
-        title: `Stage dan Backdrop Event (${index - 1})`,
-      });
-    } else {
-      setData({
-        index: 8,
-        url: `https://ik.imagekit.io/z2imqerkk1/bidrop/stage-backdrop/Stage dan Backdrop Event (8).png`,
-        title: `Stage dan Backdrop Event (8)`,
-      });
-    }
-  };
   return (
     <Fragment>
       <section ref={sectionRef} className="containers my-20 md:my-28">
@@ -107,43 +58,9 @@ const StageView = () => {
           visual.
         </p>
         <div className="mt-12 grid grid-cols-4 md:grid-cols-12    gap-2 ">
-          {Array.from({ length: 8 }).map((_, index) => (
-            <div
-              key={index}
-              className=" col-span-2  md:col-span-6 lg:col-span-3"
-            >
-              <button
-                aria-label={`booth event (${index + 1})`}
-                onClick={() => handleOpen(index)}
-                className="card rounded-md border w-full h-full cursor-pointer shadow-sm border-gray-300 hover:border-orange-400 transition-[border] duration-300 ease-in-out p-2"
-              >
-                <figure className="aspect-4/3 ">
-                  <Image
-                    src={`https://ik.imagekit.io/z2imqerkk1/bidrop/stage-backdrop/Stage dan Backdrop Event (${index + 1}).png`}
-                    width={1200}
-                    height={500}
-                    alt={`Stage dan Backdrop Event (${index + 1})`}
-                    className=" w-full h-full "
-                    priority
-                  />
-                </figure>
-              </button>
-            </div>
-          ))}
+          {children}
         </div>
 
-        {isOpen && (
-          <LightBox
-            total={8}
-            isOpen
-            data={data}
-            handleNext={handleNext}
-            handlePrev={handlePrev}
-            handleClose={() => {
-              setIsOpen(false);
-            }}
-          />
-        )}
         <script
           type="application/ld+json"
           suppressHydrationWarning

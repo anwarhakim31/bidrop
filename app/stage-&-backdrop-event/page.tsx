@@ -1,3 +1,4 @@
+import ImageGalery from "@/components/fragments/imagegallery";
 import StageView from "@/components/views/product/StageView";
 import { Metadata } from "next";
 
@@ -61,7 +62,23 @@ export const metadata: Metadata = {
 };
 
 const StagePage = () => {
-  return <StageView />;
+  return (
+    <StageView>
+      {Array.from({ length: 8 }).map((_, index) => {
+        const blurData = `https://ik.imagekit.io/z2imqerkk1/bidrop/stage-backdrop/Stage dan Backdrop Event (${index + 1}).png`;
+        return (
+          <div key={index} className=" col-span-2  md:col-span-6 lg:col-span-3">
+            <ImageGalery
+              blurData={blurData}
+              index={index}
+              imageURL="https://ik.imagekit.io/z2imqerkk1/bidrop/stage-backdrop/Stage dan Backdrop Event"
+              totalIndex={8}
+            />
+          </div>
+        );
+      })}
+    </StageView>
+  );
 };
 
 export default StagePage;

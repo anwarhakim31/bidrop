@@ -77,23 +77,23 @@ const LightBox = ({
               </button>
             </div>
           </div>
-          <figure
-            className=""
-            onClick={(e) => {
-              e.stopPropagation();
-            }}
-          >
-            <Image
-              src={`${data.url}`}
-              alt={data.title}
-              width={600}
-              height={500}
-              priority
-              placeholder="blur"
-              blurDataURL={blurData}
-              className=" object-cover"
-            />
-          </figure>
+          <div className="w-full flex justify-center">
+            <figure
+              className="relative w-full aspect-video overflow-hidden"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <Image
+                src={data.url}
+                alt={data.title}
+                fill
+                sizes="(max-width:768px) 100vw, 1200px"
+                placeholder="blur"
+                blurDataURL={blurData}
+                className="object-cover"
+                priority
+              />
+            </figure>
+          </div>
         </div>
         <p className="mt-2.5 text-sm font-semibold text-white">{data.title}</p>
       </div>

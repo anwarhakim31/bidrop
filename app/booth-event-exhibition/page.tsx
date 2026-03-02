@@ -1,4 +1,6 @@
+import ImageGalery from "@/components/fragments/imagegallery";
 import BoothExhibitionView from "@/components/views/product/BoothExhibitonView";
+import getBase64 from "@/lib/getlocalbase64";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -61,7 +63,25 @@ export const metadata: Metadata = {
 };
 
 const BothExhibitonPage = () => {
-  return <BoothExhibitionView />;
+  return (
+    <BoothExhibitionView>
+      {Array.from({ length: 8 }).map(async (_, index) => {
+        const blurData = await getBase64(
+          `https://ik.imagekit.io/z2imqerkk1/bidrop/booth/Booth Event Exhibition (${index + 1}).png`,
+        );
+        return (
+          <div key={index} className=" col-span-2  md:col-span-6 lg:col-span-3">
+            <ImageGalery
+              index={index}
+              imageURL="https://ik.imagekit.io/z2imqerkk1/bidrop/booth/Booth Event Exhibition"
+              totalIndex={8}
+              blurData={blurData}
+            />
+          </div>
+        );
+      })}
+    </BoothExhibitionView>
+  );
 };
 
 export default BothExhibitonPage;
