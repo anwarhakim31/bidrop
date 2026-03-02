@@ -128,8 +128,6 @@ const JasaDesignView = () => {
                     height={500}
                     alt={`Jasa Design Booth dan Backdrop (${index + 1})`}
                     className=" w-full h-full"
-                    placeholder="blur"
-                    blurDataURL={`https://ik.imagekit.io/z2imqerkk1/bidrop/jasa-design/Jasa Design Booth dan Backdrop (${index + 1}).png?tr=bl-30,w-1280,q-20`}
                     priority
                   />
                 </figure>

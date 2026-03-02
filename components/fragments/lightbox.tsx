@@ -21,7 +21,6 @@ const LightBox = ({
   };
   isOpen: boolean;
 }) => {
-  const [isImageLoading, setImageLoading] = React.useState(true);
   const handleDownload = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.stopPropagation();
 
@@ -32,6 +31,7 @@ const LightBox = ({
     link.click();
     document.body.removeChild(link);
   };
+
   return (
     <Modal
       onClose={handleClose}
@@ -76,7 +76,6 @@ const LightBox = ({
             </div>
           </div>
           <figure
-            // className={`bg-[url(${data.url})] w-auto h-full object-cover `}
             onClick={(e) => {
               e.stopPropagation();
             }}
@@ -87,8 +86,9 @@ const LightBox = ({
               width={600}
               height={500}
               src={data.url}
-              onLoad={() => setImageLoading(false)}
-              className={`${isImageLoading ? "blur" : "remove-blur"} w-auto h-full object-cover `}
+              placeholder="blur"
+              blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAChwGA60e6kgAAAABJRU5ErkJggg=="
+              className={` w-auto h-full object-cover `}
             />
           </figure>
           <p className="mt-2.5 text-sm font-semibold text-white">

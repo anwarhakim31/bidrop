@@ -124,8 +124,6 @@ const StageView = () => {
                     height={500}
                     alt={`Stage dan Backdrop Event (${index + 1})`}
                     className=" w-full h-full "
-                    placeholder="blur"
-                    blurDataURL={`https://ik.imagekit.io/z2imqerkk1/bidrop/stage-backdrop/Stage dan Backdrop Event (${index + 1}).png?tr=bl-30,w-1280,q-20`}
                     priority
                   />
                 </figure>

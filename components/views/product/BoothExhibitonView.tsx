@@ -124,8 +124,6 @@ const BoothExhibitionView = () => {
                     alt={`Booth Event Exhibition (${index + 1})`}
                     className=" w-full h-full "
                     priority
-                    placeholder="blur"
-                    blurDataURL={`https://ik.imagekit.io/z2imqerkk1/bidrop/booth/Booth Event Exhibition (${index + 1}).png?tr=bl-30,w-1280,q-20`}
                   />
                 </figure>
               </button>

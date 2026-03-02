@@ -110,10 +110,6 @@ const GaleriView = () => {
                   height={500}
                   alt={`Kontraktor Booth dan Jasa Design Booth (${index + 1})`}
                   className=" w-full h-full "
-                  placeholder="blur"
-                  blurDataURL={`
-  https://ik.imagekit.io/z2imqerkk1/bidrop/home/kontraktor Booth dan Jasa Design Booth (${index + 1}).png
-  ?tr=bl-30,w-1280,q-20`}
                   priority
                 />
               </figure>
