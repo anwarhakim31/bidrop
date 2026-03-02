@@ -21,7 +21,6 @@ const LightBox = ({
   };
   isOpen: boolean;
 }) => {
-  const [imageLoaded, setImageLoaded] = React.useState(true);
   const handleDownload = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.stopPropagation();
 
@@ -86,8 +85,7 @@ const LightBox = ({
               alt={data.title}
               width={600}
               height={500}
-              src={imageLoaded ? "/blur.png" : data.url}
-              onLoad={() => setImageLoaded(false)}
+              src={data.url}
               className={` w-auto h-full object-cover `}
             />
           </figure>

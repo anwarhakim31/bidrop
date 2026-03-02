@@ -111,7 +111,7 @@ const GaleriView = () => {
                   width={1200}
                   height={400}
                   alt={`galeri-event (${index + 1})`}
-                  className=" w-full h-full"
+                  className=" w-full h-full object-cover"
                   priority
                 />
               </figure>
