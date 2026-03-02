@@ -5,14 +5,15 @@ import { AlignJustify, ChevronDown, Phone, Send, X } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Fragment, useEffect, useState } from "react";
+import { Fragment, useEffect, useRef, useState } from "react";
 
 const Header = () => {
+  const headerRef = useRef<HTMLDivElement>(null);
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
   const [isDelay, setIsDelay] = useState(false);
   const [isActive, setIsActive] = useState(false);
-  const [isNonActive, setIsNonActive] = useState(false);
+
   const [isDropDown, setIsDropDown] = useState(false);
   const [fixed, setFixed] = useState(false);
 
@@ -39,17 +40,15 @@ const Header = () => {
       setFixed(false);
       if (currentScrollY > 60) {
         setIsActive(true);
-        setIsNonActive(false);
       }
 
       if (currentScrollY < 100 && currentScrollY < lastScrollY) {
         setIsActive(false);
-        setIsNonActive(true);
       }
 
       if (currentScrollY < 60 && currentScrollY < lastScrollY) {
         setIsActive(false);
-        setIsNonActive(false);
+
         setFixed(false);
       }
 
@@ -64,6 +63,23 @@ const Header = () => {
     };
   }, []);
 
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        headerRef.current &&
+        !headerRef.current.contains(event.target as Node)
+      ) {
+        setIsOpen(false);
+        setFixed(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
   return (
     <Fragment>
       <div className={` hidden md:block bg-prim  w-full `}>
@@ -89,10 +105,18 @@ const Header = () => {
       </div>
 
       <header
-        className={`bg-white py-1 left-0 w-full z-50 ${fixed ? " fixed top-0 " : ""}    ${isActive && !fixed ? "shadow-md fixed top-0 " : ""} ${isActive ? "transition-all duration-300 ease-in-out animate-[drop_0.3s_ease-in-out]" : ""}  ${isNonActive ? "shadow-md fixed top-[-200%] transition-all duration-300 ease-in-out animate-[up_0.3s_ease-in-out]" : ""} `}
+        ref={headerRef}
+        className={`bg-white py-1 left-0 w-full z-50 ${fixed ? " fixed top-0 " : ""}    ${isActive && !fixed ? "shadow-md fixed top-0 " : ""} ${isActive ? "transition-all duration-300 ease-in-out animate-[drop_0.3s_ease-in-out]" : ""}  `}
       >
         <div className="containers relative flex items-center justify-between gap-3.5">
-          <Link href="/" className="flex items-center justify-center ">
+          <Link
+            href="/"
+            className="flex items-center justify-center "
+            onClick={() => {
+              setIsOpen(false);
+              setFixed(false);
+            }}
+          >
             <Image
               src="/logo2.png"
               alt="BiDrop Logo"

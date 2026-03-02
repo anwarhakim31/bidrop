@@ -54,7 +54,7 @@ const JasaDesignView = () => {
     if (!isOpen) setIsOpen(true);
     setData({
       index: index + 1,
-      url: `/Jasa Design Booth dan Backdrop/Jasa Design Booth dan Backdrop (${index + 1}).png`,
+      url: `https://ik.imagekit.io/z2imqerkk1/bidrop/jasa-design/Jasa Design Booth dan Backdrop (${index + 1}).png`,
       title: `Jasa Design Booth dan Backdrop (${index + 1})`,
     });
   };
@@ -63,13 +63,13 @@ const JasaDesignView = () => {
     if (index < 8) {
       setData({
         index: index + 1,
-        url: `/Jasa Design Booth dan Backdrop/Jasa Design Booth dan Backdrop (${index + 1}).png`,
+        url: `https://ik.imagekit.io/z2imqerkk1/bidrop/jasa-design/Jasa Design Booth dan Backdrop (${index + 1}).png`,
         title: `Jasa Design Booth dan Backdrop (${index + 1})`,
       });
     } else {
       setData({
         index: 1,
-        url: `/Jasa Design Booth dan Backdrop/Jasa Design Booth dan Backdrop (1).png`,
+        url: `https://ik.imagekit.io/z2imqerkk1/bidrop/jasa-design/Jasa Design Booth dan Backdrop (1).png`,
         title: `Jasa Design Booth dan Backdrop (1)`,
       });
     }
@@ -79,13 +79,13 @@ const JasaDesignView = () => {
     if (index > 1) {
       setData({
         index: index - 1,
-        url: `/Jasa Design Booth dan Backdrop/Jasa Design Booth dan Backdrop (${index - 1}).png`,
+        url: `https://ik.imagekit.io/z2imqerkk1/bidrop/jasa-design/Jasa Design Booth dan Backdrop (${index - 1}).png`,
         title: `Jasa Design Booth dan Backdrop (${index - 1})`,
       });
     } else {
       setData({
         index: 8,
-        url: `/Jasa Design Booth dan Backdrop/Jasa Design Booth dan Backdrop (8).png`,
+        url: `https://ik.imagekit.io/z2imqerkk1/bidrop/jasa-design/Jasa Design Booth dan Backdrop (8).png`,
         title: `Jasa Design Booth dan Backdrop (8)`,
       });
     }
@@ -123,13 +123,13 @@ const JasaDesignView = () => {
               >
                 <figure className="aspect-4/3 ">
                   <Image
-                    src={`/Jasa Design Booth dan Backdrop/Jasa Design Booth dan Backdrop (${index + 1}).png`}
+                    src={`https://ik.imagekit.io/z2imqerkk1/bidrop/jasa-design/Jasa Design Booth dan Backdrop (${index + 1}).png`}
                     width={1200}
                     height={500}
                     alt={`Jasa Design Booth dan Backdrop (${index + 1})`}
                     className=" w-full h-full"
                     placeholder="blur"
-                    blurDataURL="/blur.jpg"
+                    blurDataURL={`https://ik.imagekit.io/z2imqerkk1/bidrop/jasa-design/Jasa Design Booth dan Backdrop (${index + 1}).png?tr=bl-30,w-1280,q-20`}
                     priority
                   />
                 </figure>

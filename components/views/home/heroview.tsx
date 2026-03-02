@@ -23,12 +23,14 @@ export default function HeroView() {
   }, []);
 
   return (
-    <section className="relative w-screen h-100 md:h-screen bg-[url('/home-low.webp')] bg-cover bg-center ">
+    <section className="relative w-screen h-100 md:h-screen  ">
       <Image
-        src="/home.webp"
+        src="https://ik.imagekit.io/z2imqerkk1/bidrop/home.webp"
         alt="Background BiDrop Production"
         fill
         priority
+        placeholder="blur"
+        blurDataURL="https://ik.imagekit.io/z2imqerkk1/bidrop/home.webp?tr=bl-30,w-1280,q-20"
         className="object-cover brightness-60"
       />
 
@@ -43,7 +45,7 @@ export default function HeroView() {
           </h2>
 
           <Link
-            href="https://wa.me/628123456789"
+            href={`https://wa.me/${process.env.NEXT_PUBLIC_WA}`}
             target="_blank"
             className="hero-animate  rounded-sm mt-8 shadow-[0_3px_0px_1px] shadow-orange-400 hover:shadow-green-300 border border-green-500 bg-green-500 transition-shadow duration-300 ease-in-out flex py-2 px-4 justify-center items-center gap-2"
           >

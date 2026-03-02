@@ -11,7 +11,7 @@ const Navigation = () => {
   useEffect(() => {
     const handleScroll = () => {
       setIsOpen(window.scrollY > 0);
-      setIsScroll(window.scrollY > 100);
+      setIsScroll(window.scrollY > 40);
     };
     handleScroll();
     window.addEventListener("scroll", handleScroll);

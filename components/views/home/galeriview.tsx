@@ -52,7 +52,7 @@ const GaleriView = () => {
     if (!isOpen) setIsOpen(true);
     setData({
       index: index + 1,
-      url: `/HomeGallery/kontraktor Booth dan Jasa Design Booth (${index + 1}).png`,
+      url: `https://ik.imagekit.io/z2imqerkk1/bidrop/home/kontraktor Booth dan Jasa Design Booth (${index + 1}).png`,
       title: `Kontraktor Booth dan Jasa Design Booth (${index + 1})`,
     });
   };
@@ -61,13 +61,13 @@ const GaleriView = () => {
     if (index < 8) {
       setData({
         index: index + 1,
-        url: `/HomeGallery/kontraktor Booth dan Jasa Design Booth (${index + 1}).png`,
+        url: `https://ik.imagekit.io/z2imqerkk1/bidrop/home/kontraktor Booth dan Jasa Design Booth (${index + 1}).png`,
         title: `Kontraktor Booth dan Jasa Design Booth (${index + 1})`,
       });
     } else {
       setData({
         index: 1,
-        url: `/HomeGallery/kontraktor Booth dan Jasa Design Booth (1).png`,
+        url: `https://ik.imagekit.io/z2imqerkk1/bidrop/home/kontraktor Booth dan Jasa Design Booth (1).png`,
         title: `Kontraktor Booth dan Jasa Design Booth (1)`,
       });
     }
@@ -77,13 +77,13 @@ const GaleriView = () => {
     if (index > 1) {
       setData({
         index: index - 1,
-        url: `/HomeGallery/kontraktor Booth dan Jasa Design Booth (${index - 1}).png`,
+        url: `https://ik.imagekit.io/z2imqerkk1/bidrop/home/kontraktor Booth dan Jasa Design Booth (${index - 1}).png`,
         title: `Kontraktor Booth dan Jasa Design Booth (${index - 1})`,
       });
     } else {
       setData({
         index: 8,
-        url: `/HomeGallery/kontraktor Booth dan Jasa Design Booth (8).png`,
+        url: `https://ik.imagekit.io/z2imqerkk1/bidrop/home/kontraktor Booth dan Jasa Design Booth (8).png`,
         title: `Kontraktor Booth dan Jasa Design Booth (8)`,
       });
     }
@@ -95,7 +95,7 @@ const GaleriView = () => {
       <h3 className="galeri-header lora text-2xl md:text-3xl font-semibold text-sec text-center">
         Galeri
       </h3>
-      <div className="mt-12 grid grid-cols-4 md:grid-cols-12    gap-2 ">
+      <div className="mt-12 grid grid-cols-4 md:grid-cols-12  gap-2 ">
         {Array.from({ length: 8 }).map((_, index) => (
           <div key={index} className=" col-span-2  md:col-span-6 lg:col-span-3">
             <button
@@ -105,13 +105,15 @@ const GaleriView = () => {
             >
               <figure className="aspect-4/3 ">
                 <Image
-                  src={`/HomeGallery/kontraktor Booth dan Jasa Design Booth (${index + 1}).png`}
+                  src={`https://ik.imagekit.io/z2imqerkk1/bidrop/home/kontraktor Booth dan Jasa Design Booth (${index + 1}).png`}
                   width={1200}
                   height={500}
                   alt={`Kontraktor Booth dan Jasa Design Booth (${index + 1})`}
                   className=" w-full h-full "
                   placeholder="blur"
-                  blurDataURL="/blur.jpg"
+                  blurDataURL={`
+  https://ik.imagekit.io/z2imqerkk1/bidrop/home/kontraktor Booth dan Jasa Design Booth (${index + 1}).png
+  ?tr=bl-30,w-1280,q-20`}
                   priority
                 />
               </figure>

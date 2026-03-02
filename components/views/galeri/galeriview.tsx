@@ -51,7 +51,7 @@ const GaleriView = () => {
     if (!isOpen) setIsOpen(true);
     setData({
       index: index + 1,
-      url: `/Gallery/galeri-event (${index + 1}).png`,
+      url: `https://ik.imagekit.io/z2imqerkk1/bidrop/Galeri/galeri-event (${index + 1}).png`,
       title: `galeri-event (${index + 1})`,
     });
   };
@@ -60,13 +60,13 @@ const GaleriView = () => {
     if (index < 20) {
       setData({
         index: index + 1,
-        url: `/Gallery/galeri-event (${index + 1}).png`,
+        url: `https://ik.imagekit.io/z2imqerkk1/bidrop/Galeri/galeri-event (${index + 1}).png`,
         title: `galeri-event (${index + 1})`,
       });
     } else {
       setData({
         index: 1,
-        url: `/Gallery/galeri-event (1).png`,
+        url: `https://ik.imagekit.io/z2imqerkk1/bidrop/Galeri/galeri-event (1).png`,
         title: `galeri-event (20)`,
       });
     }
@@ -76,13 +76,13 @@ const GaleriView = () => {
     if (index > 1) {
       setData({
         index: index - 1,
-        url: `/Gallery/galeri-event (${index - 1}).png`,
+        url: `https://ik.imagekit.io/z2imqerkk1/bidrop/Galeri/galeri-event (${index - 1}).png`,
         title: `galeri-event (${index - 1})`,
       });
     } else {
       setData({
         index: 20,
-        url: `/Gallery/galeri-event (20).png`,
+        url: `https://ik.imagekit.io/z2imqerkk1/bidrop/Galeri/galeri-event (20).png`,
         title: `galeri-event (20)`,
       });
     }
@@ -107,14 +107,14 @@ const GaleriView = () => {
             >
               <figure className="aspect-4/3">
                 <Image
-                  src={`/Gallery/galeri-event (${index + 1}).png`}
+                  src={`https://ik.imagekit.io/z2imqerkk1/bidrop/Galeri/galeri-event (${index + 1}).png`}
                   width={1200}
                   height={400}
                   alt={`galeri-event (${index + 1})`}
                   className=" w-full h-full"
                   priority
                   placeholder="blur"
-                  blurDataURL="/blur.jpg"
+                  blurDataURL={`https://ik.imagekit.io/z2imqerkk1/bidrop/Galeri/galeri-event (${index + 1}).png?tr=bl-30,w-1280,q-20`}
                 />
               </figure>
             </button>

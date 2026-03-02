@@ -21,17 +21,6 @@ const LightBox = ({
   };
   isOpen: boolean;
 }) => {
-  const blurSvg = `
-<svg width="20" height="12" xmlns="http://www.w3.org/2000/svg">
-  <filter id="b" color-interpolation-filters="sRGB">
-    <feGaussianBlur stdDeviation="1"/>
-  </filter>
-  <rect width="100%" height="100%" fill="#ddd" filter="url(#b)"/>
-</svg>
-`;
-
-  const blurDataURL = `data:image/svg+xml;base64,${btoa(blurSvg)}`;
-
   const handleDownload = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.stopPropagation();
     const link = document.createElement("a");
@@ -91,10 +80,10 @@ const LightBox = ({
             <Image
               priority
               width={600}
-              height={600}
+              height={500}
               src={data.url}
               placeholder="blur"
-              blurDataURL="/blur.jpg"
+              blurDataURL={`${data.url}?tr=bl-30,w-1280,q-20`}
               alt={data.title}
               className="w-full h-auto object-cover"
             />

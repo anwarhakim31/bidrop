@@ -54,7 +54,7 @@ const BoothExhibitionView = () => {
     if (!isOpen) setIsOpen(true);
     setData({
       index: index + 1,
-      url: `/Booth Event Exhibition/Booth Event Exhibition (${index + 1}).png`,
+      url: `https://ik.imagekit.io/z2imqerkk1/bidrop/booth/Booth Event Exhibition (${index + 1}).png`,
       title: `Booth Event Exhibition (${index + 1})`,
     });
   };
@@ -63,13 +63,13 @@ const BoothExhibitionView = () => {
     if (index < 8) {
       setData({
         index: index + 1,
-        url: `/Booth Event Exhibition/Booth Event Exhibition (${index + 1}).png`,
+        url: `https://ik.imagekit.io/z2imqerkk1/bidrop/booth/Booth Event Exhibition (${index + 1}).png`,
         title: `Booth Event Exhibition (${index + 1})`,
       });
     } else {
       setData({
         index: 1,
-        url: `/Booth Event Exhibition/Booth Event Exhibition (1).png`,
+        url: `https://ik.imagekit.io/z2imqerkk1/bidrop/booth/Booth Event Exhibition (1).png`,
         title: `Booth Event Exhibition (1)`,
       });
     }
@@ -79,13 +79,13 @@ const BoothExhibitionView = () => {
     if (index > 1) {
       setData({
         index: index - 1,
-        url: `/Booth Event Exhibition/Booth Event Exhibition (${index - 1}).png`,
+        url: `https://ik.imagekit.io/z2imqerkk1/bidrop/booth/Booth Event Exhibition (${index - 1}).png`,
         title: `Booth Event Exhibition (${index - 1})`,
       });
     } else {
       setData({
         index: 8,
-        url: `/Booth Event Exhibition/Booth Event Exhibition (8).png`,
+        url: `https://ik.imagekit.io/z2imqerkk1/bidrop/booth/Booth Event Exhibition (8).png`,
         title: `Booth Event Exhibition (8)`,
       });
     }
@@ -118,14 +118,14 @@ const BoothExhibitionView = () => {
               >
                 <figure className="aspect-4/3 ">
                   <Image
-                    src={`/Booth Event Exhibition/Booth Event Exhibition (${index + 1}).png`}
+                    src={`https://ik.imagekit.io/z2imqerkk1/bidrop/booth/Booth Event Exhibition (${index + 1}).png`}
                     width={1200}
                     height={500}
                     alt={`Booth Event Exhibition (${index + 1})`}
                     className=" w-full h-full "
                     priority
                     placeholder="blur"
-                    blurDataURL="/blur.jpg"
+                    blurDataURL={`https://ik.imagekit.io/z2imqerkk1/bidrop/booth/Booth Event Exhibition (${index + 1}).png?tr=bl-30,w-1280,q-20`}
                   />
                 </figure>
               </button>
