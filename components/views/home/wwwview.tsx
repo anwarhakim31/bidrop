@@ -62,8 +62,6 @@ const WwwView = () => {
                 width={1200}
                 height={200}
                 priority
-                placeholder="blur"
-                blurDataURL="/blur.jpg"
                 alt="Kerajinan tangan tradisional buatan pengrajin lokal"
                 className=" w-full h-full "
               />
