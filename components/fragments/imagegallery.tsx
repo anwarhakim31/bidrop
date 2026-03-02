@@ -84,7 +84,7 @@ const ImageGalery = ({
       {isOpen && (
         <LightBox
           total={totalIndex}
-          blurDataURL={blurData}
+          blurData={blurData}
           isOpen
           data={data}
           handleNext={handleNext}

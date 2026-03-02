@@ -9,7 +9,7 @@ const LightBox = ({
   handleNext,
   handlePrev,
   total,
-  blurDataURL,
+  blurData,
 }: {
   total: number;
   handleClose: () => void;
@@ -21,7 +21,7 @@ const LightBox = ({
     title: string;
   };
   isOpen: boolean;
-  blurDataURL: string | undefined;
+  blurData?: string;
 }) => {
   const handleDownload = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.stopPropagation();
@@ -90,7 +90,7 @@ const LightBox = ({
               height={500}
               priority
               placeholder="blur"
-              blurDataURL={blurDataURL}
+              blurDataURL={blurData}
               className=" object-cover"
             />
           </figure>

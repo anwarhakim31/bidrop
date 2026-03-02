@@ -49,7 +49,7 @@ const GaleriPage = () => {
           `https://ik.imagekit.io/z2imqerkk1/bidrop/Galeri/galeri-event (${index + 1}).png`,
         );
 
-        console.log(blurData);
+  
         return (
           <div key={index} className=" col-span-2  md:col-span-6 lg:col-span-3">
             <ImageGalery
