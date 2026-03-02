@@ -42,8 +42,7 @@ const LightBox = ({
       handlePrev={handlePrev}
     >
       <div className="w-full h-full flex items-center justify-center flex-col  p-4">
-        <div>
-          {" "}
+        <div className="">
           <div className="flex items-center justify-between ">
             <span
               className="text-sm  text-white w-full pb-2"
@@ -77,25 +76,20 @@ const LightBox = ({
               </button>
             </div>
           </div>
-          <div className="relative grid grid-cols-12">
-            <div
-              className=" col-span-12 flex items-center justify-center overflow-hidden"
-              onClick={(e) => e.stopPropagation()}
-            >
-              <figure className="aspect-video">
-                <Image
-                  src={data.url}
-                  alt={data.title}
-                  width={600}
-                  height={500}
-                  placeholder="blur"
-                  blurDataURL={blurData}
-                  className="w-full h-full object-cover"
-                  priority
-                />
-              </figure>
-            </div>
-          </div>
+          <figure
+            onClick={(e) => e.stopPropagation()}
+            className="relative aspect-video w-[80vw] lg:w-[50vw] h-full max-w-200"
+          >
+            <Image
+              src={data.url}
+              alt={data.title}
+              fill
+              sizes="100%"
+              priority
+              placeholder="blur"
+              blurDataURL={blurData}
+            />
+          </figure>
           <p className="mt-2.5 text-sm font-semibold text-white">
             {data.title}
           </p>

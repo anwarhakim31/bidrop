@@ -23,6 +23,7 @@ const ImageGalery = ({
 
   const handleOpen = (index: number) => {
     if (!isOpen) setIsOpen(true);
+
     setData({
       index: index + 1,
       url: `${imageURL} (${index + 1}).png`,
@@ -31,7 +32,7 @@ const ImageGalery = ({
   };
 
   const handleNext = (index: number) => {
-    if (index < 20) {
+    if (index < totalIndex) {
       setData({
         index: index + 1,
         url: `${imageURL} (${index + 1}).png`,
@@ -66,7 +67,7 @@ const ImageGalery = ({
       <button
         aria-label={`galeri event (${index + 1})`}
         onClick={() => handleOpen(index)}
-        className="galeri-card w-full rounded-md border cursor-pointer shadow-sm border-gray-300 hover:border-orange-400 transition-[border] duration-300 ease-in-out p-2"
+        className="galeri-card   w-full rounded-md border cursor-pointer shadow-sm border-gray-300 hover:border-orange-400 transition-[border] duration-300 ease-in-out p-2"
       >
         <figure className="aspect-4/3">
           <Image
@@ -74,10 +75,10 @@ const ImageGalery = ({
             width={1200}
             height={400}
             alt={`galeri-event (${index + 1})`}
-            placeholder="blur"
+            placeholder={"blur"}
             blurDataURL={blurData}
             priority
-            className=" w-full h-full object-cover"
+            className=" w-full h-full"
           />
         </figure>
       </button>

@@ -4,12 +4,12 @@ import { gallerySchema } from "@/lib/schema";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 
-import { useEffect, useRef } from "react";
+import { useLayoutEffect, useRef } from "react";
 
 const GaleriView = ({ children }: { children: React.ReactNode }) => {
   const sectionRef = useRef(null);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
 
     const ctx = gsap.context(() => {

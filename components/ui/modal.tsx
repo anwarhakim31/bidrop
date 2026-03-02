@@ -1,5 +1,5 @@
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import React, { Fragment } from "react";
+import React, { Fragment, useEffect } from "react";
 import { createPortal } from "react-dom";
 
 const BackDropOverlay = ({
@@ -33,6 +33,19 @@ const ModalOverlay = ({
   handlePrev: (index: number) => void;
   handleNext: (index: number) => void;
 }) => {
+  useEffect(() => {
+    if (!showModal) return;
+
+    const handleKey = (e: KeyboardEvent) => {
+      if (e.key === "ArrowRight") handleNext(index);
+      if (e.key === "ArrowLeft") handlePrev(index);
+      if (e.key === "Escape") onClose();
+    };
+
+    window.addEventListener("keydown", handleKey);
+    return () => window.removeEventListener("keydown", handleKey);
+  }, [showModal, index, handleNext, handlePrev, onClose]);
+
   return (
     <Fragment>
       <button
