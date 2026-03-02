@@ -9,6 +9,7 @@ const LightBox = ({
   handleNext,
   handlePrev,
   total,
+  blurDataURL,
 }: {
   total: number;
   handleClose: () => void;
@@ -20,6 +21,7 @@ const LightBox = ({
     title: string;
   };
   isOpen: boolean;
+  blurDataURL: string | undefined;
 }) => {
   const handleDownload = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.stopPropagation();
@@ -76,23 +78,24 @@ const LightBox = ({
             </div>
           </div>
           <figure
+            className=""
             onClick={(e) => {
               e.stopPropagation();
             }}
           >
             <Image
-              priority
+              src={`${data.url}`}
               alt={data.title}
               width={600}
               height={500}
-              src={data.url}
-              className={` w-auto h-full object-cover `}
+              priority
+              placeholder="blur"
+              blurDataURL={blurDataURL}
+              className=" object-cover"
             />
           </figure>
-          <p className="mt-2.5 text-sm font-semibold text-white">
-            {data.title}
-          </p>
         </div>
+        <p className="mt-2.5 text-sm font-semibold text-white">{data.title}</p>
       </div>
     </Modal>
   );
