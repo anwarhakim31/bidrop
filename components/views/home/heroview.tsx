@@ -23,14 +23,12 @@ export default function HeroView() {
   }, []);
 
   return (
-    <section className="relative w-screen h-100 md:h-screen  ">
+    <section className="relative w-screen h-100 md:h-screen  bg-[url('/home-low.webp')] bg-cover bg-center">
       <Image
         src="https://ik.imagekit.io/z2imqerkk1/bidrop/home.webp"
         alt="Background BiDrop Production"
         fill
         priority
-        placeholder="blur"
-        blurDataURL="https://ik.imagekit.io/z2imqerkk1/bidrop/home.webp?tr=bl-30,w-1280,q-20"
         className="object-cover brightness-60"
       />
 

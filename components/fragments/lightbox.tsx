@@ -21,12 +21,16 @@ const LightBox = ({
   };
   isOpen: boolean;
 }) => {
+  const [isImageLoading, setImageLoading] = React.useState(true);
   const handleDownload = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.stopPropagation();
+
     const link = document.createElement("a");
-    link.href = data.url;
-    link.download = data.title;
+    link.href = `${data.url}?ik-attachment=true`;
+    link.download = data.title || "download";
+    document.body.appendChild(link);
     link.click();
+    document.body.removeChild(link);
   };
   return (
     <Modal
@@ -72,25 +76,24 @@ const LightBox = ({
             </div>
           </div>
           <figure
-            className="aspect-video"
+            // className={`bg-[url(${data.url})] w-auto h-full object-cover `}
             onClick={(e) => {
               e.stopPropagation();
             }}
           >
             <Image
               priority
+              alt={data.title}
               width={600}
               height={500}
               src={data.url}
-              placeholder="blur"
-              blurDataURL={`${data.url}?tr=bl-30,w-1280,q-20`}
-              alt={data.title}
-              className="w-full h-auto object-cover"
+              onLoad={() => setImageLoading(false)}
+              className={`${isImageLoading ? "blur" : "remove-blur"} w-auto h-full object-cover `}
             />
-            <figcaption className="mt-2.5 text-sm font-semibold text-white">
-              {data.title}
-            </figcaption>
           </figure>
+          <p className="mt-2.5 text-sm font-semibold text-white">
+            {data.title}
+          </p>
         </div>
       </div>
     </Modal>
