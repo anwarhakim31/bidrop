@@ -67,7 +67,10 @@ export default function Page() {
         );
 
         return (
-          <div key={index} className=" col-span-2  md:col-span-6 lg:col-span-3">
+          <div
+            key={index}
+            className="card col-span-2  md:col-span-6 lg:col-span-3"
+          >
             <ImageGalery
               blurData={blurData}
               index={index}

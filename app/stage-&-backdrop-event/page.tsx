@@ -67,7 +67,10 @@ const StagePage = () => {
       {Array.from({ length: 8 }).map((_, index) => {
         const blurData = `https://ik.imagekit.io/z2imqerkk1/bidrop/stage-backdrop/Stage dan Backdrop Event (${index + 1}).png`;
         return (
-          <div key={index} className=" col-span-2  md:col-span-6 lg:col-span-3">
+          <div
+            key={index}
+            className="card col-span-2  md:col-span-6 lg:col-span-3"
+          >
             <ImageGalery
               blurData={blurData}
               index={index}

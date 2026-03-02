@@ -42,7 +42,7 @@ const ImageGalery = ({
       setData({
         index: 1,
         url: `${imageURL} (1).png`,
-        title: `galeri-event (20)`,
+        title: `galeri-event (1)`,
       });
     }
   };

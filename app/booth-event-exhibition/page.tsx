@@ -70,7 +70,10 @@ const BothExhibitonPage = () => {
           `https://ik.imagekit.io/z2imqerkk1/bidrop/booth/Booth Event Exhibition (${index + 1}).png`,
         );
         return (
-          <div key={index} className=" col-span-2  md:col-span-6 lg:col-span-3">
+          <div
+            key={index}
+            className="card col-span-2  md:col-span-6 lg:col-span-3"
+          >
             <ImageGalery
               index={index}
               imageURL="https://ik.imagekit.io/z2imqerkk1/bidrop/booth/Booth Event Exhibition"

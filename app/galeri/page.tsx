@@ -50,7 +50,10 @@ const GaleriPage = () => {
         );
 
         return (
-          <div key={index} className="col-span-2  md:col-span-6 lg:col-span-3">
+          <div
+            key={index}
+            className="galeri-card col-span-2  md:col-span-6 lg:col-span-3"
+          >
             <ImageGalery
               index={index}
               imageURL="https://ik.imagekit.io/z2imqerkk1/bidrop/Galeri/galeri-event"

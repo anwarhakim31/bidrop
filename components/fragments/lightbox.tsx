@@ -42,7 +42,7 @@ const LightBox = ({
       handlePrev={handlePrev}
     >
       <div className="w-full h-full flex items-center justify-center flex-col  p-4">
-        <div className="">
+        <div className="flex flex-col">
           <div className="flex items-center justify-between ">
             <span
               className="text-sm  text-white w-full pb-2"
@@ -78,7 +78,7 @@ const LightBox = ({
           </div>
           <figure
             onClick={(e) => e.stopPropagation()}
-            className="relative aspect-video w-[80vw] lg:w-[50vw] h-full max-w-200"
+            className="relative aspect-3/2 w-[80vw] lg:w-[50vw]  max-w-200"
           >
             <Image
               src={data.url}
